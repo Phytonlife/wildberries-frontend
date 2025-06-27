@@ -1,14 +1,15 @@
 
+
+
 import axios from 'axios';
 
+const API_URL = 'http://localhost:8000/api/products/';
+
+/**
+ * Получить список продуктов с фильтрами.
+ * @param {Object} filters
+ */
 export const fetchProducts = (filters) => {
-  return axios.get('http://localhost:8000/api/products/', { params: filters });
+  return axios.get(API_URL, { params: filters });
 };
 
-export const fetchPriceHistogram = (filters) => {
-  return axios.get('http://localhost:8000/api/products/histogram/', { params: filters });
-};
-
-export const fetchDiscountRating = (filters) => {
-  return axios.get('http://localhost:8000/api/products/discount-rating/', { params: filters });
-};
